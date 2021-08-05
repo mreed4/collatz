@@ -1,6 +1,10 @@
 const collatz = () => {
 
-    let n = Math.floor(Math.random() * 10);
+    let n = Math.floor(Math.random() * 100);
+    n = parseInt(prompt(`Input any number`));
+
+    let m = n;
+    console.log(n);
 
     let arr = [n];
 
@@ -17,4 +21,5 @@ const collatz = () => {
     }
 
     console.log(arr);
+    console.log(`${m} took ${arr.length} steps to resolve to 1`)
 }
