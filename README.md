@@ -1,0 +1,2 @@
+# collatz
+Fun with collatz
