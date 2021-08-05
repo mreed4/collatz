@@ -1,14 +1,15 @@
 const collatz = () => {
 
-    let n = Math.floor(Math.random() * 100);
-    n = parseInt(prompt(`Input any number`));
+    let n = Math.floor(Math.random() * 10000000); // Random number
+    // n = parseInt(prompt(`Input any number`)); // User input
 
-    let m = n;
-    console.log(n);
+    const m = n; // Save number before it mutates
 
-    let arr = [n];
+    console.log(`Initial number: ${m}`);
 
-    while (n != 1 && n > 0) {
+    let arr = [n]; // Initialize array
+
+    while (n != 1 && n > 0) { // Ensures no infinite loop
 
         if (n % 2 === 0) {
             n = n / 2;
@@ -20,6 +21,12 @@ const collatz = () => {
 
     }
 
-    console.log(arr);
+    // Returns new array of the last digits in each number in arr 
+    let arr2 = arr.map(int => {
+        int = int.toString();
+        return parseInt(int[int.length - 1]);
+    });
+
+    console.log(arr2.reverse());
     console.log(`${m} took ${arr.length} steps to resolve to 1`)
 }
